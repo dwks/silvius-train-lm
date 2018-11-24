@@ -22,7 +22,7 @@ gunzip -c "$english_arpa_lm" | \
 
 #cp /tmp/aaa.fst $dest/G_english.fst
 
-echo "Checking how stochastic G_english is (the first of these numbers should be small):"
-fstisstochastic $dest/G_english.fst
+#echo "Checking how stochastic G_english is (the first of these numbers should be small):"
+#fstisstochastic $dest/G_english.fst
 
 exit 0;

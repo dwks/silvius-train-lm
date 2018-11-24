@@ -39,7 +39,7 @@ echo -n >$dir/extra_questions.txt
  cat - $dir/lexicon_words.txt | sort | uniq > $dir/lexicon.txt
 
 # Check that the dict dir is okay!
-utils/validate_dict_dir.pl $dir || exit 1
+#utils/validate_dict_dir.pl $dir || exit 1
 
 # check for corpus.txt words
-local/check_lexicon.pl $dir/lexicon.txt
+local/check_lexicon.pl $dir/lexicon.txt || exit 1
