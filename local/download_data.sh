@@ -24,3 +24,13 @@ if [ ! -d cantab-TEDLIUM ]; then
 fi
 
 popd
+
+pretrained=http://kaldi-asr.org/downloads/build/9/trunk/egs/tedlium/s5/archive.tar.gz
+
+if [ ! -f archive.tar.gz ]; then
+        echo "Download pretrained model..."
+        wget $pretrained
+fi
+if [ ! -d archive ]; then
+        mkdir archive && tar xf archive.tar.gz -C archive
+fi
