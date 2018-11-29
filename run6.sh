@@ -6,11 +6,12 @@ corpus=corpus.txt
 . utils/parse_options.sh  # accept options
 
 ## make basic data/local/dict1 (words.txt, etc) from cantab
-#echo "=== Generating basic dictionary"
+echo "=== Generating basic dictionary"
 local/download_data.sh
 local/prepare_dict.sh || exit 1
 
 # prepare our word disambiguation symbols
+echo "=== Making word disambiguation symbols"
 mkdir -p data/local/dict1
 echo '#english' > data/local/dict1/silvius_wdisambig.txt
 #echo '#command' >> data/local/dict1/silvius_wdisambig.txt
@@ -37,4 +38,5 @@ echo "=== Building HCLG.fst from final.mdl and tree"
 cp -ar archive/exp/nnet2_online/nnet_ms_sp_online/* $tri/
 utils/mkgraph.sh data/lang_6 $tri $tri/graph || exit 1
 
+echo "=== Success!"
 exit
